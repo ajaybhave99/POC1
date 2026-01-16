@@ -9,6 +9,7 @@ namespace POC1.Persistance1
 {
     public interface IArtRepository
     {
+        
         Task<IEnumerable<Art>> GetAllAsync(); // READ all
         Task<Art?> GetByIdAsync(int id);      // READ one
 
