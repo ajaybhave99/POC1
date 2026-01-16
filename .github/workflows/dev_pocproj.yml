@@ -33,11 +33,12 @@ jobs:
         run: dotnet publish POC1/POC1.sln -c Release -o ./publish --no-build
 
 
-      - name: Upload artifact for deployment job
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+         name: .net-app
+         path: ./publish
+
 
   deploy:
     runs-on: windows-latest
@@ -68,6 +69,7 @@ jobs:
           package: .
 
           
+
 
 
 
